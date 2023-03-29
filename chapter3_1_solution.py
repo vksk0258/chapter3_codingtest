@@ -20,3 +20,13 @@ if x_min > x: x_min = x
 if y_min > y: y_min = y
 if x_max < x: x_max = x
 if y_max < y: y_max = y
+
+# 4.모든 교점을 *로 찍어서 표현한다.
+x_len = x_max - x_min + 1
+y_len = y_max - y_min + 1
+coord = [["."] * x_len for _ in range(y_len)] # for문에서 _사용은 range()의 횟수만큼돌 반복된다는 뜻 변수를 사용안함
+
+for star_x, star_y in pos:
+    nx = star_x + abs(x_min) if x_min < 0 else star_x - x_min # x,y좌표는 음수 값이 존재하므로 음수일 경우 절댓값을 더해준다
+    ny = star_y + abs(y_min) if y_min < 0 else star_y - y_min
+    coord[ny][nx] = '*' # 별의 좌표를 찍는다
