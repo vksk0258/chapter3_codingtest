@@ -14,3 +14,9 @@ if x == int(x) and y == int(y):
     x = int(x)
     y = int(y)
     pos.append([x,y])
+    
+# 3.교점을 모두 표현할 수 있는 최소한의 사각형을 알아낸다.
+if x_min > x: x_min = x
+if y_min > y: y_min = y
+if x_max < x: x_max = x
+if y_max < y: y_max = y
